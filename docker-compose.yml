@@ -1,0 +1,17 @@
+# NOTE - this is limited to 80/tcp and not mapping 8080 to 80 .... 
+# so... this is not working
+version: '3.3'
+services:
+    my-nginx:
+        build: .
+        container_name: my-nginx
+        image: nginx:stable
+        restart: always
+        ports:
+            - "8080:80"
+            # - 443:443
+        # volumes:
+            # - ./nginx:/etc/nginx/conf.d
+            # - staticfiles:/home/app/cagweb/staticfiles
+            # - media:/usr/share/nginx/html/media
+            # - media:/home/app/cagweb/media
